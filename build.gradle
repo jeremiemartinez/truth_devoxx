@@ -1,0 +1,13 @@
+group 'com.jeremiemartinez'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.google.truth:truth:0.28'
+}
