@@ -34,16 +34,9 @@ public class CartSubjectSolution extends Subject<CartSubjectSolution, Cart> {
         return this;
     }
 
-    public CartSubjectSolution hasTotal(float total) {
+    public CartSubjectSolution hasTotal(int total) {
         if (getSubject().total() != total) {
             fail("hasTotal", total);
-        }
-        return this;
-    }
-
-    public CartSubjectSolution contains(long id) {
-        if (!getSubject().content().containsKey(new Cart.Item(id, "id", 0))) {
-            fail("contains", id);
         }
         return this;
     }

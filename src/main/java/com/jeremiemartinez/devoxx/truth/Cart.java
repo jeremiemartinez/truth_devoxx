@@ -25,9 +25,9 @@ public class Cart {
         }
     }
 
-    public double total() {
+    public int total() {
         return content.entrySet().stream().
-                mapToDouble(entry -> entry.getValue() * entry.getKey().price).
+                mapToInt(entry -> entry.getValue() * entry.getKey().price).
                 sum();
     }
 
@@ -41,17 +41,13 @@ public class Cart {
         content.clear();
     }
 
-    public Map<Item, Integer> content() {
-        return content;
-    }
-
     public static class Item {
 
         public final long id;
         public final String description;
-        public final double price;
+        public final int price;
 
-        public Item(long id, String description, double price) {
+        public Item(long id, String description, int price) {
             this.id = id;
             this.description = description;
             this.price = price;
@@ -76,6 +72,15 @@ public class Cart {
         @Override
         public int hashCode() {
             return (int) (id ^ (id >>> 32));
+        }
+
+        @Override
+        public String toString() {
+            return "Item{" +
+                    "id=" + id +
+                    ", description='" + description + '\'' +
+                    ", price=" + price +
+                    '}';
         }
     }
 

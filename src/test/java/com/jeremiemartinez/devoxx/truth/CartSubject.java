@@ -3,6 +3,7 @@ package com.jeremiemartinez.devoxx.truth;
 import com.google.common.truth.FailureStrategy;
 import com.google.common.truth.Subject;
 import com.google.common.truth.SubjectFactory;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class CartSubject extends Subject<CartSubject, Cart> {
 
@@ -22,18 +23,14 @@ public class CartSubject extends Subject<CartSubject, Cart> {
     }
 
     public CartSubject hasCount(int count) {
-
+        throw new NotImplementedException();
     }
 
     public CartSubject isEmpty() {
-
+        throw new NotImplementedException();
     }
 
     public CartSubject hasTotal(float total) {
-
-    }
-
-    public CartSubject contains(long id) {
-
+        throw new NotImplementedException();
     }
 }
